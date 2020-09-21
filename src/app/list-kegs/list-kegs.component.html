@@ -1,0 +1,38 @@
+<div class="container content">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <span class="anchor" id="formLogin"></span>
+            <!-- form	card	login	with	validation	feedback	-->
+            <div class="card card-outline-secondary">
+                <div class="card-header">
+                    <h3 class="mb-0">Kegs</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="code">Código</label>
+                            <input type="text" class="form-control" id="code" placeholder="Ingresar código..." #code>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descripción</label>
+                            <input type="text" class="form-control" id="description" placeholder="Ingresar descripción..." #description>
+                        </div>
+                        <div class="form-group">
+                            <label for="size">Tamaño</label>
+                            <input type="number" class="form-control" id="size" placeholder="Ingresar tamaño..." #size>
+                        </div>
+                        <div class="form-group">
+                            <label for="type">Tipo</label>
+                            <input type="text" class="form-control" id="type" placeholder="Ingresar tamaño..." #type>
+                        </div>
+                        <button type="submit" class="btn btn-primary" (click)="guardar(code.value, description.value, size.value, type.value)">Guardar!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="mb-5">
+    <div class="row row-flex">
+        <app-keg *ngFor="let k of kegs" [keg] = "k"></app-keg>
+    </div> 
+</div>
